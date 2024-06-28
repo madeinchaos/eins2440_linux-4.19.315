@@ -45,29 +45,29 @@
 /* LED devices */
 
 static struct s3c24xx_led_platdata smdk_pdata_led4 = {
-	.gpio		= S3C2410_GPF(4),
+	.gpio		= S3C2410_GPB(0),
 	.flags		= S3C24XX_LEDF_ACTLOW | S3C24XX_LEDF_TRISTATE,
-	.name		= "led4",
+	.name		= "green",
 	.def_trigger	= "timer",
 };
 
 static struct s3c24xx_led_platdata smdk_pdata_led5 = {
-	.gpio		= S3C2410_GPF(5),
+	.gpio		= S3C2410_GPB(1),
 	.flags		= S3C24XX_LEDF_ACTLOW | S3C24XX_LEDF_TRISTATE,
-	.name		= "led5",
+	.name		= "red",
 	.def_trigger	= "nand-disk",
 };
 
 static struct s3c24xx_led_platdata smdk_pdata_led6 = {
-	.gpio		= S3C2410_GPF(6),
+	.gpio		= S3C2410_GPB(2),
 	.flags		= S3C24XX_LEDF_ACTLOW | S3C24XX_LEDF_TRISTATE,
-	.name		= "led6",
+	.name		= "blue",
 };
 
 static struct s3c24xx_led_platdata smdk_pdata_led7 = {
-	.gpio		= S3C2410_GPF(7),
+	.gpio		= S3C2410_GPB(3),
 	.flags		= S3C24XX_LEDF_ACTLOW | S3C24XX_LEDF_TRISTATE,
-	.name		= "led7",
+	.name		= "white",
 };
 
 static struct platform_device smdk_led4 = {
@@ -152,10 +152,10 @@ static struct platform_device __initdata *smdk_devs[] = {
 };
 
 static const struct gpio smdk_led_gpios[] = {
-	{ S3C2410_GPF(4), GPIOF_OUT_INIT_HIGH, NULL },
-	{ S3C2410_GPF(5), GPIOF_OUT_INIT_HIGH, NULL },
-	{ S3C2410_GPF(6), GPIOF_OUT_INIT_HIGH, NULL },
-	{ S3C2410_GPF(7), GPIOF_OUT_INIT_HIGH, NULL },
+	{ S3C2410_GPB(0), GPIOF_OUT_INIT_HIGH, NULL },
+	{ S3C2410_GPB(1), GPIOF_OUT_INIT_HIGH, NULL },
+	{ S3C2410_GPB(2), GPIOF_OUT_INIT_HIGH, NULL },
+	{ S3C2410_GPB(3), GPIOF_OUT_INIT_HIGH, NULL },
 };
 
 void __init smdk_machine_init(void)
